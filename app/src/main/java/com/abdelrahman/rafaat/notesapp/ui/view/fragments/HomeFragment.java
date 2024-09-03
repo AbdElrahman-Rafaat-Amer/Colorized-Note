@@ -345,6 +345,8 @@ abstract class MyItemTouchHelperCallback extends ItemTouchHelper.Callback {
                             float dX, float dY, int actionState, boolean isCurrentlyActive) {
         float translationX = dX;
         View itemView = viewHolder.itemView;
+        Log.d("SWIPE_ISSUE", "onChildDraw: itemView.getWidth----> " + itemView.getWidth());
+        Log.d("SWIPE_ISSUE", "onChildDraw: dX-------------------> " + dX);
         swipedPosition = viewHolder.getAdapterPosition();
         if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
             if (dX < 0) {
@@ -357,6 +359,7 @@ abstract class MyItemTouchHelperCallback extends ItemTouchHelper.Callback {
                 drawButtonsOnLeft(canvas, itemView);
             }
         }
+        Log.d("SWIPE_ISSUE", "onChildDraw: translationX---------> " + translationX);
         super.onChildDraw(canvas, recyclerView, viewHolder, translationX, dY, actionState, isCurrentlyActive);
     }
 
