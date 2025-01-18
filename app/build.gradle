@@ -4,10 +4,12 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
 }
 
 android {
     compileSdk 35
+    namespace 'com.abdelrahman.rafaat.notesapp'
 
     defaultConfig {
         applicationId "com.abdelrahman.rafaat.notesapp"
@@ -38,12 +40,15 @@ android {
 
     buildFeatures {
         viewBinding true
+        compose = true
     }
-    namespace 'com.abdelrahman.rafaat.notesapp'
+
     kotlinOptions {
         jvmTarget = '11'
     }
-
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"
+    }
 }
 
 dependencies {
@@ -104,4 +109,13 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
     implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
 
+
+    def compose_version = "1.7.6"
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation "androidx.compose.runtime:runtime:$compose_version"
+
+    implementation "androidx.activity:activity-compose:1.10.0"
+    implementation "androidx.navigation:navigation-compose:2.8.5"
 }
