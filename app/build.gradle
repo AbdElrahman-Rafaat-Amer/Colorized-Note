@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.abdelrahman.rafaat.notesapp"
         minSdk 26
-        targetSdk 34
+        targetSdk 35
         versionCode 8
         versionName "1.1.8"
 
@@ -32,26 +32,29 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     buildFeatures {
         viewBinding true
     }
     namespace 'com.abdelrahman.rafaat.notesapp'
+    kotlinOptions {
+        jvmTarget = '11'
+    }
 
 }
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 
     //Room
     def room_version = "2.6.1"
@@ -64,10 +67,10 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
     //lottie
-    implementation "com.airbnb.android:lottie:5.0.2"
+    implementation "com.airbnb.android:lottie:6.1.0"
 
     //Navigation Graph
-    def nav_version = "2.7.4"
+    def nav_version = "2.8.5"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
@@ -78,7 +81,7 @@ dependencies {
     implementation 'uk.co.samuelwall:material-tap-target-prompt:3.3.2'
 
     //AdMob
-    implementation 'com.google.android.gms:play-services-ads:22.4.0'
+    implementation 'com.google.android.gms:play-services-ads:23.6.0'
 
     //facebook Ads
     implementation 'com.facebook.android:audience-network-sdk:6.13.7'
@@ -91,7 +94,7 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.1'
 
     //Firebase
-    implementation platform('com.google.firebase:firebase-bom:32.3.1')
+    implementation platform('com.google.firebase:firebase-bom:33.8.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
 
